@@ -10,6 +10,7 @@ import wave, struct
 from scipy.io import wavfile
 from math import log10
 
+#de functie voor de nagalmtijd
 def nagalmtijd_60db(file, dB_drop):
     
     wavefile = wave.open(file)
@@ -30,6 +31,7 @@ def nagalmtijd_60db(file, dB_drop):
     safety_variable = 3
     
     for i in range(length):
+        #dit eerste deel rekent alle waardes om naar dB
         filedata = wavefile.readframes(1)
         data = struct.unpack("<h", filedata)
         y = data[0]
@@ -58,15 +60,19 @@ def nagalmtijd_60db(file, dB_drop):
     
     
     for i, waarde in enumerate(gemdata):
+        #het bepalen van het begin punt
         if i >= start and tstart == 0:
             dBstart = gemdata[start]
             if gemdata[i] <= dBstart - safety_variable and gemdata[i] >= dBstart - (safety_variable + 0.1) :
                 tstart = i
                 
+       #het bepalen van het eind punt
         if i >= start and teind == 0:
             if gemdata[i] <= dBstart - (dB_drop + safety_variable) and gemdata[i] >= dBstart - (dB_drop + safety_variable + 0.1) :
                 teind = i
                 break
+        
+    #het bereken van de nagalmtijd
     t = (teind - tstart) / sample_rate
     t = 60/dB_drop * t
     return t
