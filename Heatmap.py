@@ -9,7 +9,7 @@ import matplotlib.pyplot as plt
 import pandas as pd
 
 
-file = r"C:\Users\User\OneDrive - HvA\project\project_3\opnames\gemiddelde_1000hz.xlsx"
+file = r"example file"
 
 data_df = pd.read_excel(file)
 data_df = data_df["gemiddelde"]
