@@ -2,7 +2,8 @@
 """
 Created on Sat Mar 16 11:41:56 2024
 
-@author: merlijn
+@author: Merlijn
+@sub author: Mike
 """
 
 import wave, struct
@@ -69,9 +70,3 @@ def nagalmtijd_60db(file, dB_drop):
     t = (teind - tstart) / sample_rate
     t = 60/dB_drop * t
     return t
-
-file = r"C:\Users\User\OneDrive - HvA\project\project_3\opnames\metingen\1000hz\f1000meting2.0_vak6.wav"
-dB_drop = 10
-
-t = nagalmtijd_60db(file, dB_drop)
-print("nagalmtijd is" , t, "s")
