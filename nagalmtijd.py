@@ -75,4 +75,4 @@ def nagalmtijd_60db(file, dB_drop):
     #het bereken van de nagalmtijd
     t = (teind - tstart) / sample_rate
     t = 60/dB_drop * t
-    return t
+    print("de nagalmtijd is:", t)
