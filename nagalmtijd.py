@@ -78,6 +78,10 @@ def nagalmtijd_60db(file, dB_drop):
     #het bereken van de nagalmtijd
     t = (teind - tstart) / sample_rate
     t = 60/dB_drop * t
+
+    #als je de "#" weghaalt bij de volgende twee lijnen dan print hij ook je db grafiek
+    #x = np.linspace(0, len(gemdata)/sample_rate, len(gemdata))
+    #plt.plot(x, gemdata)
     
     print("de nagalmtijd is:", t)
     #als je wil kan je hier ook gewoon return t van maken indien je het wil gebruiken voor in een lijst
