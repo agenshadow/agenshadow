@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-Martijn Sitters
+author: Martijn Sitters
 
 This is a temporary script file.
 """
