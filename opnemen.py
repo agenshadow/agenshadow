@@ -16,19 +16,23 @@ seconds = 5
 channels = 1
 pause = 3
 
-# Start recording
+#een loop van 3 omdat wij 3 keer willen opnemen op 1 punt
 for i in range(3):
+    # Start recording
     p = pyaudio.PyAudio()
     stream = p.open(format=format,
                     channels=channels,
                     rate=rate,
                     input=True,
                     frames_per_buffer=chunk)
+    
     print("Start recording")
     frames = []
+    
     for j in range(0, int(rate / chunk * seconds)):
         data = stream.read(chunk)
         frames.append(data)
+        
     print("Recording stopped")
     stream.stop_stream()
     stream.close()
@@ -41,7 +45,8 @@ for i in range(3):
     wf.setframerate(rate)
     wf.writeframes(b''.join(frames))
     wf.close()
-    
+
+    #pauze tussen de metingen
     print(pause, "s pauze")
     time.sleep(pause)
     print("volgende meting")
