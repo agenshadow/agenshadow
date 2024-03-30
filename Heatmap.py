@@ -2,7 +2,6 @@
 """
 @author: Martijn Sitters
 
-This is a temporary script file.
 """
 
 import matplotlib.pyplot as plt
