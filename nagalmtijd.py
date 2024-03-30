@@ -12,7 +12,7 @@ from math import log10
 
 #de functie voor de nagalmtijd
 def nagalmtijd_60db(file, dB_drop):
-    
+    #aanmaken van variabelen die nodig gaan zijn
     wavefile = wave.open(file)
     ydata = []
     gemdata = []
@@ -43,7 +43,9 @@ def nagalmtijd_60db(file, dB_drop):
         y = abs(y)
         y = 20 * log10(y / 2**15)
         ydata.append(y)
-        
+
+        #dit verwerkt de lijst tot fatsoenlijke waardes en verwijderd telkens de laatste waarde van de lijst
+        #hij doet dit om het een stuk sneller te maken
         if i >= 11025:
             gem += ydata[i]
             gem -= ydata[i-11025] 
@@ -53,7 +55,8 @@ def nagalmtijd_60db(file, dB_drop):
             gemdata.append(gem/(i+1))
         
         te = round(i / sample_rate, 1)
-        
+
+        #progress bar
         if te != td:
             print(str(te) + "s verwerkt")
             td = te
@@ -75,4 +78,6 @@ def nagalmtijd_60db(file, dB_drop):
     #het bereken van de nagalmtijd
     t = (teind - tstart) / sample_rate
     t = 60/dB_drop * t
+    
     print("de nagalmtijd is:", t)
+    #als je wil kan je hier ook gewoon return t van maken indien je het wil gebruiken voor in een lijst
