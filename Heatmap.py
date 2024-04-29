@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-@author: Martijn Sitters
+@author: sesame street
 """
 
 import matplotlib.pyplot as plt
