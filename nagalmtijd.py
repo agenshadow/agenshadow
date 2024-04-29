@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
 """
-Created on Sat Mar 16 11:41:56 2024
 
 @author: trash can monster
 """
