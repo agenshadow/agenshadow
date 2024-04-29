@@ -1,8 +1,7 @@
 # -*- coding: utf-8 -*-
 """
-Created on Fri Jan 19 08:48:08 2024
 
-@author: thijs
+@author: kirby
 """
 import pyaudio
 import wave
