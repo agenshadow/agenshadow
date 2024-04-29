@@ -2,8 +2,7 @@
 """
 Created on Sat Mar 16 11:41:56 2024
 
-@author: Merlijn
-@sub author: Mike
+@author: trash can monster
 """
 
 import wave, struct
