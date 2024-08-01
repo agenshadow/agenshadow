@@ -1,4 +1,4 @@
-import passwordmanagerdefs as pmd
+import passwordmanagerfunc as pmd
 from hashlib import sha256
 from os.path import isfile
 
